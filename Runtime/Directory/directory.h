@@ -6,7 +6,7 @@
 #include <string.h>
 #include <cJSON.h>
 
-#include "file.h"
+#include "data.h"
 #include "accessPrivilege.h"
 
 #include "utils.h"
@@ -16,14 +16,14 @@ typedef struct Directory {
     AccessPrivilege *privilege;
     struct Directory *parent;
     struct Directory *subdirs;
-    File *files;
+    Data *data;
     struct Directory *next;
 } Directory;
 
 
 Directory *createDirectory(const char *name, Directory *parent);
 
-void addFileToDirectory(Directory *dir, File *file);
+void addDataToDirectory(Directory *dir, Data *data);
 
 void addSubdirectory(Directory *parent, Directory *subdir);
 

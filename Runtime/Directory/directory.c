@@ -5,14 +5,14 @@ Directory *createDirectory(const char *name, Directory *parent) {
     dir->name = strdup(name);
     dir->parent = parent;
     dir->subdirs = NULL;
-    dir->files = NULL;
+    dir->data = NULL;
     dir->next = NULL;
     return dir;
 }
 
-void addFileToDirectory(Directory *dir, File *file) {
-    file->next = dir->files;
-    dir->files = file;
+void addDataToDirectory(Directory *dir, Data *data) {
+    data->next = dir->data;
+    dir->data = data;
 }
 
 void addSubdirectory(Directory *parent, Directory *subdir) {
@@ -42,13 +42,13 @@ void *fetch(Directory *dir, const char *path) {
         }
 
         if (result == NULL) {
-            File *file = current_dir->files;
-            while (file) {
-                if (strcmp(file->name, token) == 0) {
-                    result = file;
+            Data *data = current_dir->data;
+            while (data) {
+                if (strcmp(data->name, token) == 0) {
+                    result = data;
                     break;
                 }
-                file = file->next;
+                data = data->next;
             }
         }
 

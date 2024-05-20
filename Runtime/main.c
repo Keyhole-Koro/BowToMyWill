@@ -5,15 +5,15 @@ void test_directory_and_file_operations() {
     Directory *subdir = createDirectory("subdir", root);
     addSubdirectory(root, subdir);
 
-    File *file = createFile("file1.txt", "{\"content\": \"Hello, World!\"}", 19);
-    addFileToDirectory(subdir, file);
+    Data *data = createData("file1.txt", "{\"content\": \"Hello, World!\"}", 19);
+    addDataToDirectory(subdir, data);
 
     Directory *fetched_dir = (Directory *)fetch(root, "subdir");
     assert(fetched_dir != NULL && strcmp(fetched_dir->name, "subdir") == 0);
 
-    File *fetched_file = (File *)fetch(root, "subdir/file1.txt");
-    assert(fetched_file != NULL && strcmp(fetched_file->name, "file1.txt") == 0);
-    assert(fetched_file->size == 19);
+    Data *fetched_data = (Data *)fetch(root, "subdir/file1.txt");
+    assert(fetched_data != NULL && strcmp(fetched_data->name, "file1.txt") == 0);
+    assert(fetched_data->size == 19);
 
 }
 
