@@ -23,3 +23,5 @@ RUN apt-get update && apt-get install -y \
 #    cmake .. && \
 #    make && \
 #    make install
+
+#sudo apt-get install libcjson-dev

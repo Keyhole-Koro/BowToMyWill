@@ -9,6 +9,8 @@
 #include "file.h"
 #include "accessPrivilege.h"
 
+#include "utils.h"
+
 typedef struct Directory {
     char *name;
     AccessPrivilege *privilege;

@@ -1,7 +1,7 @@
 #include "accessPrivilege.h"
 
-AccessPrivilege *initialiedAccessPrivilege(AccessPrivilege *bitmap) {
-    AccessPrivilege *bitmap = calloc(sizeof(AccessPrivilege));
+AccessPrivilege *initialiedAccessPrivilege() {
+    AccessPrivilege *bitmap = calloc(1, sizeof(AccessPrivilege));
     return bitmap;
 }
 

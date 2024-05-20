@@ -1,6 +1,7 @@
 #ifndef ACCESS_PRIVILEGE_H
 #define ACCESS_PRIVILEGE_H
 
+#include <stdlib.h>
 #include <stdbool.h>
 
 typedef struct {

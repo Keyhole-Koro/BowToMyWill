@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <cJSON.h>
 
 typedef struct File {
     char *name;
@@ -12,6 +13,6 @@ typedef struct File {
     struct File *next;
 } File;
 
-File *createFile(const char *name, void *payload, size_t size);
+File *createFile(const char *name, const char *payload, size_t size);
 
 #endif
