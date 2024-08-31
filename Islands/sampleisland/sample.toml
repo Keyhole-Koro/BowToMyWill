@@ -1,0 +1,33 @@
+# Island module configuration file
+
+[general]
+# General settings
+version = "1.0"           # Version of the tool or module
+name = "example_island"  # Name of the Island module
+language = "Python"       # Programming language used by the module
+role = "parser"           # Role of the module (e.g., lexer, parser, vm, optimizer, jit)
+
+[exec]
+# Execution settings
+cmd = "/path/to/executable"  # Path to the executable file or command to run the module
+
+[communication]
+# General communication settings
+format = "protocol_buffer" # Data format for communication (e.g., json, protocol_buffer)
+method = "unix_socket"     # Communication method (e.g., unix_socket, stdout)
+
+[communication.unix_socket]
+# Unix socket communication settings
+path = "/tmp/tool_communication.sock"  # Path to the Unix socket
+timeout = 30                           # Timeout for communication in seconds
+
+[communication.stdout]
+# Standard output communication settings
+log_level = "info"  # Log level for standard output (e.g., debug, info, warn, error)
+
+[communication.inter_island]
+# Inter-Island communication settings
+enabled = true  # Whether inter-Island communication is enabled
+method = "unix_socket"  # Communication method for inter-Island (e.g., unix_socket, network)
+path = "/tmp/inter_island_communication.sock"  # Path to the Unix socket for inter-Island communication
+timeout = 30  # Timeout for inter-Island communication in seconds
